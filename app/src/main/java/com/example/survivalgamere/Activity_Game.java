@@ -19,6 +19,7 @@ public class Activity_Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView((int) R.layout.activity_game);
         String id = getIntent().getStringExtra(EXTRA_ID);
+        checkValidId(id);
         if (id.length() == this.steps.length) {
             int i = 0;
             while (true) {
@@ -32,6 +33,14 @@ public class Activity_Game extends AppCompatActivity {
         }
         findViews();
         initViews();
+    }
+
+    private void checkValidId(String id) {
+        if (id.length() < this.steps.length){
+            Toast.makeText(this, "Id must be in " + this.steps.length + " length", Toast.LENGTH_LONG).show();
+            this.goodToGo = false;
+            finishGame();
+        }
     }
 
     /* access modifiers changed from: private */

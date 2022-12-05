@@ -1,4 +1,4 @@
-package com.classy.survivegame;
+package com.example.survivalgamere;
 
 import android.content.Intent;
 import android.os.Bundle;
